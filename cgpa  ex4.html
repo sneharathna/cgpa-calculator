@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CGPA calculator using Event Handling</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+      body
+      {
+          background-color: #f5c6e7;
+      }
+      #color
+      {
+          color: rgb(1, 4, 15);
+      }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 id ="color">CGPA Calculator</h2>
+  <form class="form-horizontal" id="cgpa">
+    <div class="form-group">
+      <label id="color" class="control-label col-sm-2">Sem 1</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="sem1" placeholder="Enter Your Sem 1" name="sem1">
+      </div>
+    </div>
+    <div class="form-group">
+        <label id="color" class="control-label col-sm-2">Sem 2</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="sem2" placeholder="Enter Your Sem 2" name="sem2">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label id="color" class="control-label col-sm-2">Sem 3</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="sem3" placeholder="Enter Your Sem 3" name="sem3">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label id="color" class="control-label col-sm-2">Sem 4</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="sem4" placeholder="Enter Your Sem 4" name="sem4">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label id="color" class="control-label col-sm-2">Sem 5</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="sem5" placeholder="Enter Your Sem 5" name="sem5">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label id="color" class="control-label col-sm-2">Sem 6</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="sem6" placeholder="Enter Your Sem 6" name="sem6">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label id="color" class="control-label col-sm-2">Sem 7</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="sem7" placeholder="Enter Your Sem 7" name="sem7">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label id="color" class="control-label col-sm-2">Sem 8</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="sem8" placeholder="Enter Your Sem 8" name="sem8">
+        </div>
+      </div>
+<div class="form-group">
+        <label id="color" class="control-label col-sm-2">Total Sem</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="tot" placeholder="enter the total no of sem you have entered" name="tot">
+        </div>
+      </div>
+    
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button id="cal" type="button" onclick="calc()"style="background-color: rgb(255, 194, 245) ; color:black"  class="btn btn-default">Calculate</button>
+      </div>
+    </div>
+  </form>
+  
+  <p style="color: black">Your CGPA is <span id="res1"></sapn>  </p>
+</div>
+<script type="text/javascript">
+{
+ var val=0;  var total=0;var sum=0;
+    function calc()
+   {
+        total = document.getElementById("cgpa").elements.namedItem("tot").value; 
+        total =parseFloat(total);
+   	var i;
+	for(i=0;i<total;i++)
+	{
+		val=document.getElementById("cgpa").elements[i].value;
+		val=parseFloat(val)
+		sum=sum+val;
+	}
+	var result=sum/total;
+	result=result.toFixed(2);
+	document.getElementById("res1").innerHTML=result;
+	
+      }
+}
+</script>    
